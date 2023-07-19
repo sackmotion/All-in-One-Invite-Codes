@@ -28,7 +28,7 @@ function um_custom_validate_invite_code( $key, $array, $args ) {
 
 	if ( isset( $args[$key] ) ) {
 		error_log("$args[$key] exist $key");
-		$result = all_in_one_invite_codes_validate_code( $args[$key], $args['invite_code'], );
+		$result = all_in_one_invite_codes_validate_code( $args[$key], $args['invite_code'], 'register'); // 'register' or 'any'
 		if ( isset( $result['error'] ) ) {
 			UM()->form()->add_error( $key, $result['error'] );
 		}
